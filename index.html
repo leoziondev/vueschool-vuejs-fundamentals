@@ -11,7 +11,12 @@
 <body class="bg-gray-50 min-h-screen flex items-center justify-center">
   <div id="app" class="w-full max-w-2xl mx-auto bg-white rounded-md shadow p-8 mx-4">
     <h1 class="text-2xl font-bold text-gray-700 mb-8">{{ header }}</h1>
-    <input type="text" v-model="header" class="bg-gray-100 w-full py-2 px-4 text-gray-500 rounded-md">
+
+    <ul>
+      <li v-for="item in items">
+        {{ item }}
+      </li>
+    </ul>
   </div>
 
   <script src="https://unpkg.com/vue@2"></script>
@@ -19,7 +24,12 @@
     var app = new Vue({
       el: '#app',
       data: {
-        header: 'Vue is ready to party'
+        header: 'Shooping List App',
+        items: [
+          '10 party hats',
+          '2 board games',
+          '20 cups'
+        ]
       }
     })
   </script>
