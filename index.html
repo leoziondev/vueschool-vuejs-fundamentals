@@ -16,12 +16,12 @@
       <input
         type="text"
         v-model="newItem"
-        @keyup.enter="items.push(newItem)"
+        @keyup.enter="saveItem"
         placeholder="Add item"
         class="flex-1 bg-gray-100 w-full py-2 px-4 text-gray-500 rounded-md"
       />
       <button
-        @click="items.push(newItem)"
+        @click="saveItem"
         class="bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-semibold rounded-md py-2 px-4"
       >
         Add item
@@ -47,6 +47,12 @@
           '2 board games',
           '20 cups'
         ]
+      },
+      methods: {
+        saveItem: function() {
+          this.items.push(this.newItem)
+          this.newItem = ''
+        }
       }
     })
   </script>
